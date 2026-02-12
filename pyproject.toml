@@ -28,3 +28,6 @@ select = ["B", "B9", "C", "E", "F", "I", "W", "T"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 10
+
+[tool.setuptools]
+package-dir = {"" = "python_scripts"}

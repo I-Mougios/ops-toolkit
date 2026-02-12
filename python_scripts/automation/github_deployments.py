@@ -1,6 +1,6 @@
+import argparse
 import json
 import subprocess
-import argparse
 import sys
 
 
@@ -9,7 +9,7 @@ def get_github_deployments(owner, repo):
     result = subprocess.run(["gh", "api", f"/repos/{owner}/{repo}/deployments"], capture_output=True, text=True)
 
     if result.returncode != 0:
-        print("Error:", result.stderr)
+        print("Error:", result.stderr)  # noqa: T201
         sys.exit(1)
 
     return sorted(json.loads(result.stdout), key=lambda k: k["created_at"])
@@ -21,9 +21,9 @@ def delete_github_deployment(owner, repo, id):
     )
 
     if result.returncode != 0:
-        print("Failed to delete deployment:", result.stderr)
+        print("Failed to delete deployment:", result.stderr)   # noqa: T201
     else:
-        print("Successfully deleted deployment:".format(id))
+        print(f"Successfully deleted deployment {id}:")   # noqa: T201
 
 
 if __name__ == "__main__":
@@ -53,5 +53,5 @@ if __name__ == "__main__":
             delete_github_deployment(args.owner, args.repo, deployment_id)
     else:
         deployments = get_github_deployments(args.owner, args.repo)
-        print(json.dumps(deployments, indent=2))
+        print(json.dumps(deployments, indent=2))   # noqa: T201
         sys.exit(0)

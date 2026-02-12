@@ -1,8 +1,6 @@
 from functools import reduce
 
-import sqlalchemy
+print("This is a print statement")  # noqa: T201
+assert reduce(lambda x, y: x + y, range(1,100)) == 100
 
-
-print("This is a print statement")
-
-d = dict(a=1, b=2)
+d = dict(a=1, b=2) # noqa: C408

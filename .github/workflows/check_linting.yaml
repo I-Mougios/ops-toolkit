@@ -18,6 +18,9 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install and run Ruff
-        run: pip install ruff && ruff check .
+      - name: Install Ruff
+        run: pip install ruff
+
+      - name: Run ruff-check
+        run: ruff check .
 

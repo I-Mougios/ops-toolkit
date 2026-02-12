@@ -10,16 +10,13 @@ dev = ["ruff"]
 [tool.ruff]
 line-length = 120
 target-version = "py313"
+src=["python_scripts"]
 # Files/folders to exclude from linting
 exclude = [
     ".git",
     ".venv",
     "migrations",
     "__pycache__",
-    "*.md",
-    "*.ini",
-    "*.toml",
-    ".*sh",
 ]
 
 [tool.ruff.lint]

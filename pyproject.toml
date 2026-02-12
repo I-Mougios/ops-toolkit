@@ -1,0 +1,30 @@
+[project]
+name = "ops-toolkit"
+version = "0.1.0"
+requires-python = ">3.13"
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+# Files/folders to exclude from linting
+exclude = [
+    ".git",
+    ".venv",
+    "migrations",
+    "__pycache__",
+    "*.md",
+    "*.ini",
+    "*.toml",
+    ".*sh",
+]
+
+[tool.ruff.lint]
+ignore = []
+select = ["B", "B9", "C", "E", "F", "I", "W", "T"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
